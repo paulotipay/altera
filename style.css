@@ -1,0 +1,377 @@
+/*
+Theme Name: Flatsome Child
+Description: This is a child theme for Flatsome Theme
+Author: UX Themes
+Template: flatsome
+Version: 3.0
+*/
+
+/*************** ADD CUSTOM CSS HERE.   ***************/
+
+body {
+  color: #000;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.heading-font,
+.off-canvas-center .nav-sidebar.nav-vertical > li > a {
+  font-family: 'Baskervville', serif !important;
+  color: #000;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.heading-font,
+.banner h1,
+.banner h2 {
+  font-weight: 100 !important;
+  font-family: 'Baskervville', serif !important;
+  color: #000;
+}
+
+.otherspace-footer-wrapper {
+  padding: 40px;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.otherspace-footer-wrapper .copy {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 100%;
+  display: block;
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.logo a {
+  text-transform: capitalize;
+  color: #000;
+  font-size: 26px;
+  font-weight: 400 !important;
+  font-family: 'Baskervville', serif !important;
+}
+
+.nav > li > a,
+.mobile-sidebar-levels-2 .nav > li > ul > li > a {
+  color: #000;
+  font-weight: 400 !important;
+  font-size: 1em;
+}
+
+.nav-uppercase > li > a {
+  text-transform: capitalize;
+}
+
+.otherspace-category-page-title .woocommerce-breadcrumb,
+.otherspace-breadcrumbs-wrapper .woocommerce-breadcrumb,
+.checkout-breadcrumbs {
+  text-transform: capitalize;
+  font-weight: 100;
+  font-size: 13px;
+}
+
+.checkout-breadcrumbs {
+  justify-content: flex-start;
+}
+
+.otherspace-product-container .otherspace-breadcrumbs-wrapper,
+.otherspace-categories-container .otherspace-breadcrumbs-wrapper {
+  padding: 0 15px;
+  margin-bottom: 24px;
+}
+
+.otherspace-category-page {
+  width: 100%;
+  padding: 0 15px;
+  max-width: 1080px;
+  margin: 0 auto 40px;
+}
+
+.otherspace-category-page .sidebar-inner {
+  display: none;
+}
+
+.otherspace-category-page .shop-container {
+  margin-top: 16px;
+}
+
+.grid-tools a {
+  background: #fff;
+  border: 1px solid #000;
+  color: #000;
+  margin: 15px;
+  text-transform: capitalize;
+  font-weight: 100;
+}
+
+.image-tools a:last-child {
+  margin-bottom: 15px;
+}
+
+.otherspace-category-page .nav-pagination {
+  text-align: right;
+}
+
+.otherspace-category-page-title {
+  margin-top: 30px;
+}
+
+.otherspace-category-page-title .page-title-inner {
+  min-height: 0;
+  padding-top: 0;
+}
+
+.otherspace-category-page .nav-pagination > li > a,
+.otherspace-category-page .nav-pagination > li > span {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0px;
+  color: #000;
+}
+
+.otherspace-category-page .nav-pagination > li > .current,
+.otherspace-category-page .nav-pagination > li > a:hover,
+.otherspace-category-page .nav-pagination > li > span:hover {
+  border: 1px solid rgba(0, 0, 0, 1);
+  background: #fff;
+}
+
+.otherspace-button {
+  color: #000;
+  text-transform: capitalize;
+  font-weight: 100;
+}
+
+.product-quick-view-container {
+  padding: 10px;
+}
+
+.button.alt,
+.button.checkout,
+.checkout-button,
+.secondary {
+  background: #fff;
+  color: #000;
+  text-transform: capitalize;
+  border: 1px solid #000;
+}
+
+.quantity {
+  display: none;
+}
+
+.product-summary .otherspace-product-title {
+  margin-bottom: 16px;
+}
+
+.product-summary .otherspace-product-title p {
+  margin-bottom: 0px;
+  line-height: 16px;
+}
+
+.product-summary .otherspace-product-title p.product-title {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 36px;
+}
+
+.product-summary .otherspace-product-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.product-summary .otherspace-product-price .medium-size p {
+  color: #6d6d6d;
+  margin-bottom: 0px;
+  line-height: 18px;
+}
+
+.product-summary .otherspace-product-price .price-amount {
+  font-size: 40px;
+  font-weight: 500;
+  text-align: right;
+  margin: 0;
+}
+
+.product-summary
+  .otherspace-product-price
+  .price-amount
+  .woocommerce-Price-currencySymbol {
+  font-size: 40px;
+  font-weight: 500;
+}
+
+.otherspace-product-container .otherspace-description-wrapper {
+  margin-bottom: 16px;
+}
+
+.otherspace-product-container .otherspace-description-wrapper h5 {
+  font-weight: 400;
+  font-size: 40px;
+  padding: 0 0 8px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  margin: 24px 0;
+}
+
+.otherspace-product-container .otherspace-description {
+  font-weight: 100;
+  text-align: justify;
+}
+
+.otherspace-product-container .otherspace-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 8px;
+  row-gap: 32px;
+}
+
+.otherspace-product-container .otherspace-details-grid > div > span {
+  color: #6d6d6d;
+  text-transform: uppercase;
+}
+
+.otherspace-product-container .otherspace-details-grid > div > p {
+  color: #000;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 26px;
+  margin: 0;
+}
+
+.otherspace-footer {
+  margin-top: 32px;
+}
+
+.filter-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.filter-button {
+  background-color: #0073aa;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.filter-button:hover {
+  background-color: #005177;
+}
+
+.filter-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  z-index: 10;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 250px;
+}
+
+.filter-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.filter-menu ul li {
+  margin-bottom: 0;
+}
+
+.filter-menu ul li label {
+  display: flex;
+  align-items: center;
+  font-weight: 100;
+  margin: 0;
+}
+
+.filter-menu ul li input[type='checkbox'] {
+  margin-right: 8px;
+}
+
+.filter-menu input[type='text'] {
+  width: 100%;
+  padding: 8px;
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.filter-menu button {
+  border: 1px solid;
+}
+
+.filter-dropdown:hover .filter-menu,
+.filter-menu:focus-within {
+  display: block;
+}
+
+.filter-menu .filter-section.artist-section {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  padding-bottom: 16px;
+  padding-top: 8px;
+  margin-top: 16px;
+}
+
+.filter-menu .filter-section.filter-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+}
+
+.filter-menu .filter-section.filter-actions a {
+  display: block;
+}
+
+.otherspace-categories-container {
+  padding: 0 15px;
+  margin-top: 30px;
+}
+
+.otherspace-categories-container .otherspace-breadcrumbs-wrapper {
+  padding: 0;
+}
+
+.otherspace-categories-container ul {
+  list-style: none;
+}
+
+.otherspace-categories-container .otherspace-category-item a {
+  display: block;
+  position: relative;
+}
+
+.otherspace-categories-container .otherspace-category-item a span {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  font-size: 40px;
+  font-weight: 500;
+  color: #fff;
+}
+
+@media only screen and (max-width: 48em) {
+  /*************** ADD MOBILE ONLY CSS HERE  ***************/
+}
