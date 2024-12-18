@@ -8,6 +8,19 @@ function child_theme_google_fonts() {
     wp_enqueue_style( 'child-theme-google-fonts', 'https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&display=swap', [], null );
 }
 add_action( 'wp_enqueue_scripts', 'child_theme_google_fonts' );
+//custom css
+function enqueue_conditional_css_based_on_url() {
+    if (isset($_GET['product_cat']) && $_GET['product_cat'] === 'bidding') {
+        wp_enqueue_style(
+            'conditional-css-bidding',
+            get_stylesheet_directory_uri() . '/css/bidding-styles.css',
+            [],
+            null
+        );
+    }
+}
+add_action('wp_enqueue_scripts', 'enqueue_conditional_css_based_on_url');
+
 
 // Add custom text input fields to product edit page
 function add_custom_text_attribute_field() {
@@ -182,23 +195,80 @@ function otherspace_add_to_single_product_summary() {
     echo '</div>';
   }
 
+
   function display_price_medium_size(){
     $product_id = get_post($post_id);
     $price = get_product_price_by_id($product_id);
 
-    $medium = get_post_meta(get_the_ID(), '_medium_otherspace', true);
-    $size = get_post_meta(get_the_ID(), '_size_otherspace', true);
+    $product = wc_get_product($product_id);
+    $product_type = $product->get_type();
+    if($product_type != "auction"){
+      $medium = get_post_meta(get_the_ID(), '_medium_otherspace', true);
+      $size = get_post_meta(get_the_ID(), '_size_otherspace', true);
 
-    echo '<div class="otherspace-product-price">';
-    echo '<div class="medium-size">';
-    echo '<p>' . esc_html($medium) . '</p>';
-    echo '<p>' . esc_html($size) . '</p>';
-    echo '</div>';
-    echo '<p class="price-amount">' . $price . '</p>';
-    echo '</div>';
+      echo '<div class="otherspace-product-price">';
+      echo '<div class="medium-size">';
+      echo '<p>' . esc_html($medium) . '</p>';
+      echo '<p>' . esc_html($size) . '</p>';
+      echo '</div>';
+      echo '<p class="price-amount">' . $price . '</p>';
+      echo '</div>';
+    }else{
+   
+      $current_bid = get_post_meta(get_the_ID(), '_auction_current_bid', true);
+      $medium = get_post_meta(get_the_ID(), '_medium_otherspace', true);
+      $size = get_post_meta(get_the_ID(), '_size_otherspace', true);
+      $start_price = get_post_meta(get_the_ID(), '_auction_start_price', true);
+      $increment_bid = get_post_meta(get_the_ID(), '_auction_bid_increment', true);
+      $currency_code = get_woocommerce_currency();
+      $formatted_price = wc_price($current_bid);
+      $formatted_inc_price = wc_price($increment_bid);
+       $formatted_start_price = wc_price($start_price);
+      // echo $product;
+
+      echo '<div class="otherspace-product-price">';
+     
+      echo '<div class="medium-size">';
+      echo '<p>' . esc_html($medium) . '</p>';
+      echo '<p>' . esc_html($size) . '</p>';
+      echo '</div>';
+      echo '<div>';
+    
+
+
+      if($current_bid > 0 ){
+        echo '<p class="price-amount">'. $currency_code . $formatted_price .'</p>';
+        echo '</div>';
+        echo '</div>';
+        echo '<hr>';
+      }else{
+        echo '<p class="price-amount">No bids yet</p>';
+        echo '</div>';
+        echo '</div>';
+        echo '<hr>';
+      }
+
+      echo '<div class="bid-info">';
+      echo '<bold>Starting Price:</bold>';
+      echo '<p> ' . $currency_code . $formatted_start_price . '</br>';
+      echo '</div>';
+
+      echo '<div class="bid-info">';
+      echo '<bold>Current Bid:</bold>';
+      echo '<p> ' . $currency_code . $formatted_price . '</br>';
+      echo '</div>';
+
+
+      echo '<div class="bid-info">';
+      echo '<bold>Bid Increment:</bold>';
+      echo '<p> ' . $currency_code . $formatted_inc_price . '</br>';
+      echo '</div>';
+      
+    }
   }
 }
 add_action('init', 'otherspace_add_to_single_product_summary');
+
 
 function otherspace_add_to_before_single_product_summary() {
 
